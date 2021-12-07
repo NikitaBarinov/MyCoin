@@ -1,0 +1,6 @@
+import './balanceOf.ts'
+import './totalSupply.ts'
+import './allowance.ts'
+import './approve.ts'
+import './transferFrom.ts'
+import './transfer.ts'
