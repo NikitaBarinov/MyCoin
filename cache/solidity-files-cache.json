@@ -70,6 +70,41 @@
       "artifacts": [
         "Token"
       ]
+    },
+    "C:\\Users\\Nikita.B\\Documents\\GitHub\\MyCoin\\contracts\\Token.sol": {
+      "lastModificationDate": 1638951115467,
+      "contentHash": "91cd3bf6e0f72eceddc5cd96c5773c30",
+      "sourceName": "contracts/Token.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Token"
+      ]
     }
   }
 }
