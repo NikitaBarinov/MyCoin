@@ -72,8 +72,8 @@
       ]
     },
     "C:\\Users\\Nikita.B\\Documents\\GitHub\\MyCoin\\contracts\\Token.sol": {
-      "lastModificationDate": 1638951115467,
-      "contentHash": "91cd3bf6e0f72eceddc5cd96c5773c30",
+      "lastModificationDate": 1638969809097,
+      "contentHash": "ccfec05339999eb831f509a6822e130d",
       "sourceName": "contracts/Token.sol",
       "solcConfig": {
         "version": "0.8.4",

@@ -24,6 +24,14 @@ describe('Token contract', () => {
     });
 
     describe('Transactions', () => {
+        it('Should transfer ownership from owner to addr1', async () => {
+            console.log(await token.owner());
+            var c = await token.connect(owner).transferOwnership(addr1.address);
+            console.log(await token.owner());
+            console.log(c);
+            expect(await token.owner()).to.equal(addr1.address);
+        });
+
         it('Should transfer tokens to addr1', async () => {
 
             await token.connect(owner).transfer(addr1.address, 1);

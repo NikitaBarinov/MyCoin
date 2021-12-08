@@ -9,11 +9,11 @@ contract Token{
     address public owner;
     string public name;
     string public symbol;
-    uint256 public totalSupply_;
+    uint256 private totalSupply_;
     uint8 public decimals;
     
-    mapping(address => uint256) public balances;
-    mapping(address => mapping(address => uint256)) allowed;
+    mapping(address => uint256) private balances;
+    mapping(address => mapping(address => uint256)) private allowed;
 
     constructor() public {
         owner = msg.sender;
@@ -22,6 +22,17 @@ contract Token{
         decimals = 18;
         totalSupply_ = 1000;
         balances[owner] = totalSupply_;
+    }
+
+    function transferOwnership(address newOwner) public returns(bool answer) {
+      require(owner == msg.sender,"Ownable: caller is not owner");
+      require(newOwner != address(0),"Ownable: new owner is the zero address");
+     
+      address oldOwner = owner;
+      owner = newOwner;
+     
+      emit OwnershipTransferred(oldOwner,newOwner);  
+      return true;
     }
 
     /// @notice Transfer selected quantity of tokens
@@ -108,19 +119,24 @@ contract Token{
 
     /// @notice Return total supply of tokens  
     /// @return totSupply type uint256
-    function totalSupply() view public returns (uint256 totSupply ){
+    function totalSupply() public view returns (uint256 totSupply ){
         return totalSupply_;
     }
 
     /// @notice Return balance of address   
     /// @return balance type uint256
-    function balanceOf(address _owner) view public returns(uint256 balance){
+    function balanceOf(address _owner) public view returns(uint256 balance){
         return balances[_owner];
     }
 
+    /// An event for tracking a approval of tokens.
     event Approval(address indexed tokenOwner, address indexed spender,
      uint tokens);
+
+    /// An event for tracking a transfer of tokens.
     event Transfer(address indexed _from, address indexed _to,
      uint256 _value);
 
+    /// An event for tracking owner of contract.
+    event OwnershipTransferred(address indexed previosOwner, address indexed newOwner);
 }

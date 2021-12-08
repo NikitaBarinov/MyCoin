@@ -36,16 +36,6 @@ const receipt = await web3.eth.sendSignedTransaction(
 );
 
 console.log('Transaction hash:',receipt.transactionHash);
-
-
-//const result = await myContract
-//.methods
-//.approve(
-    //taskArgs.addressSpender,
-  //  taskArgs.value)
-//.call({from:'0x302c91F513bdBbA555D189C1Bc6c59cB6A6121A5',gas:6000000});
-
-//console.log('Do approval successful?',result); 
 });
 
 

@@ -18,7 +18,7 @@ const result = await myContract
 .allowance(
     taskArgs.addressOwner,
     taskArgs.addressSpender)
-.call({gas:6000000});
+.call();
 
 console.log('Allowance:',result); 
 });
